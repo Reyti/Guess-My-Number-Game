@@ -117,3 +117,35 @@ h1 {
 .label-score {
   margin-bottom: 2rem;
 }
+
+/*Winnng animations*/
+
+/* CSS code */
+@keyframes winningAnimation {
+  0% {
+    background-color: #ffcccc;
+  }
+  50% {
+    background-color: #ff9999;
+  }
+  100% {
+    background-color: #ffcccc;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.guess.winning {
+  animation: winningAnimation 2s infinite;
+}
+
+.fade-in {
+  animation: fade-in 2s;
+}

@@ -20,8 +20,10 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guess === secretNumber) {
     displayMessage('Correct Number!');
     document.querySelector('.number').textContent = secretNumber;
-
+    inputField.classList.add('winning');
+    document.querySelector('body').classList.add('fade-in');
     document.querySelector('body').style.backgroundColor = '#60b347';
+
     document.querySelector('.number').style.width = '30rem';
 
     if (score > highscore) {
