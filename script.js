@@ -77,3 +77,46 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
 });
+
+// Check value
+const valueInput = document.getElementById('value');
+
+valueInput.addEventListener('input', validateInput);
+
+// Function to validate the input
+function validateInput() {
+  let value = parseInt(valueInput.value);
+
+  // Check if the value is within the desired range (1-20)
+  if (value < 1 || value > 20 || isNaN(value)) {
+    // If the value is not within the range or is NaN, reset the input field
+    valueInput.value = '';
+  }
+}
+
+// HTML code:
+// Assume you have an input field with id="value" and class="guess",
+// and a button with class="btn check"
+
+// JavaScript code:
+// Get the references to the input field and the button
+const inputField = document.getElementById('value');
+const checkButton = document.querySelector('.btn.check');
+
+// Add an event listener to the input field for keydown events
+inputField.addEventListener('keydown', function (event) {
+  // Check if the Enter key was pressed
+  if (event.keyCode === 13) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    // Trigger the click event on the check button
+    checkButton.click();
+  }
+});
+
+// Add an event listener to the check button for the click event
+checkButton.addEventListener('click', function (event) {
+  // Perform the desired action when the button is clicked
+  console.log('Button clicked!');
+  // Add your custom code here
+});
